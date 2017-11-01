@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{list-style: none;}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: 'http://localhost:3000/item/index',
+				type: 'GET',
+				success: function(e) {
+					for(var i in e) {
+						$("body").append("<div><a href='datail.html?id=" + e[i].id + "'>" + e[i].name + "</a></div>")
+					}
+				}
+			})
+
+		</script>
+		<ul>
+			<li>首页</li>
+			<li><a href="datail.html?id=brl" > 新闻</a> </li>
+			<li>关于</li>
+		</ul>
+	</body>
+
+</html>
